@@ -1,0 +1,23 @@
+name: Chronicle Outage Monitor
+
+on:
+  schedule:
+    - cron:  '0 * * * *' 
+
+jobs:
+  check-outage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.x 
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Outage Checker Script
+        run: python gcp_outage_checker.py 
+

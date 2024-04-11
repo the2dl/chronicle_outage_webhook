@@ -41,3 +41,7 @@ The `gcp_outage_checker.py` script can be further customized to fit your specifi
 
 `LOOKBACK_HOURS` for the time window of outage detection
 The JSON payload to include additional fields relevant to your Chronicle SOAR workflow.
+
+## GitHub Actions
+
+You can also run a GitHub action hourly, example in [Workflow](workflow/chronicle-outage-monitor.yaml). If you do this, make sure to set the webhook URL as an environment key in GitHub.
